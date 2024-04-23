@@ -10,6 +10,12 @@ repository = "https://github.com/TyOverby/flame"
 documentation = "https://docs.rs/flame"
 keywords = ["profiling", "flamegraph", "performance", "tool"]
 
+[lib]
+crate-type = ["staticlib", "rlib"]
+
+[profile.release]
+debug = true
+
 [features]
 default = ["json"]
 json = ["serde", "serde_derive", "serde_json"]
@@ -17,6 +23,7 @@ json = ["serde", "serde_derive", "serde_json"]
 [dependencies]
 lazy_static = "1.*.*"
 thread-id = "4.*.*"
+indexmap = "2.2.6"
 
 [dependencies.serde]
 version = "1.*.*"
